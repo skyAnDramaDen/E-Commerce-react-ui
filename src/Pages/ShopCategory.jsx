@@ -1,13 +1,18 @@
-import React from 'react';
-import { useState } from 'react';
-import '../Components/Navbar/Navbar';
+import React, { useContext } from 'react';
+import './CSS/ShopCategory.css';
+import { ShopContext } from '../Context/ShopContext';
 
-function ShopCategory() {
+export default function ShopCategory(props) {
+    const  { all_products } = useContext(ShopContext);
     return (
-        <div className='navbar'>
-        
+        <div className='shop-category'>
+            <img src={props.banner} alt='' />
+            <div className="shopcategory-indexSort">
+                <p>
+                    <span>Showing 1-12</span> out of 36 products
+                </p>
+                <div className="shopcategory-sort"></div>
+            </div>
         </div>
-    );
+    )
 }
-
-export default ShopCategory;

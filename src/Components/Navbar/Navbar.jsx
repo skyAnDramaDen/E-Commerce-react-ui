@@ -11,7 +11,7 @@ function NavBar() {
         <div className='navbar'>
             <div className='nav-logo'>
                 <img src={logo} alt=''/>
-                <p>Swiphf</p>
+                <p>Swif</p>
             </div>
             <ul className="nav-menu">
                 <li onClick={() => {setMenu('shop')}}><Link to ='/' style={{  textDecoration: 'none'}}>SHOP</Link>{ menu === "shop" ? <hr/> : <></>}</li>

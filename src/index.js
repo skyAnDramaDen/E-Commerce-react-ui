@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import MyApp from './App';
+// import { ShopContextProvider } from './Context/ShopContext';
+import ShopContextProvider from './Context/ShopContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <MyApp />
-  </React.StrictMode>
+  <ShopContextProvider>
+    <React.StrictMode>
+      <MyApp />
+    </React.StrictMode>
+  </ShopContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
