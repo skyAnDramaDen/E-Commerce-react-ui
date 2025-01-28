@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
-import '../Components/Navbar/Navbar';
+import './CSS/Product.css';
+import { Link, useParams } from 'react-router-dom';
+
+import { ShopContext } from '../Context/ShopContext';
+import Breadcrumb from '../Components/Breadcrumb/Breadcrumb';
+import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 
 function Product() {
+    const { all_products } = useContext(ShopContext);
+
+    const params = useParams();
+
+    const product_id = params.id;
+
+    const product = all_products.find((prod) => {
+        return prod.id === Number(product_id);
+    })
+
     return (
-        <div className='navbar'>
-        
+        <div className='product'>
+            <Breadcrumb product = {product} />
+            <ProductDisplay product = {product} />
         </div>
     );
 }
